@@ -1,0 +1,101 @@
+<html>
+<style>
+  BODY {
+    font-family: monaco, menlo, monospace;
+  }
+
+  MAIN {
+    margin: 2em auto;
+    max-width: 80ch;
+  }
+
+  .item {
+    margin-bottom: 2ch;
+    display: grid;
+    grid-template-columns: 100px auto;
+  }
+
+  .items {
+  }
+
+  .time {
+    text-align: right;
+    font-size: 0.9em;
+    color: #333;
+  }
+
+  .link {
+    margin-left: 2ch;
+  }
+
+  .source {
+    margin-bottom: 4px;
+  }
+
+  .link A {
+    font-weight: 500;
+    font-size: 19px;
+    color: #0077dd;
+    text-decoration: none;
+  }
+
+  .link A:visited {
+    color: #666;
+    font-weight: 300 !important;
+  }
+  
+  .time, .source {
+    font-size: 0.85em;
+  }
+
+  h2, .link A {
+    font-family: "Helvetica Neue", sans-serif;
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 32px;
+    padding-left: 8px;
+    margin-top: 36px;
+    margin-left: 108px;
+  }
+
+  h1 {
+    font-weight: 300;
+    font-size: 42px;
+    padding-left: 8px;
+    margin-top: 40px;
+  }
+</style>
+<body>
+
+<main>
+
+<h1>engineering blogs</h1>
+<p><em>last built at <%= Time.now %></em></p>
+
+<div class="items">
+<%
+  old_date = ''
+  items.each do |item|
+    d = item[:published].strftime("%Y-%m-%d") %>
+
+    <% if old_date != d %>
+    <h2><%= d %></h2>
+    <% end %>
+  <div class="item">
+    <div class="time"><%= item[:published].strftime("%H:%M") %></div>
+    <div class="link">
+      <div class="source"><%= item[:feed] %></div>
+      <a href="<%= item[:url] %>"><%= item[:title] %></a>
+    </div>
+  </div>
+<% 
+  old_date = d
+  end %>
+</div>
+
+</main>
+
+</body>
+</html>
