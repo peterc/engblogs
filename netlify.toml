@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/"
+  to = "http://engblogs.s3.amazonaws.com/index.html"
+  status = 200
