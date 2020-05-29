@@ -4,11 +4,9 @@
 require 'dotenv'
 Dotenv.load
 require 'aws-sdk-dynamodb'
-require 'aws-sdk-s3'
 require 'feedjira'
 require 'thread/pool'
 require 'digest/sha1'
-require 'erb'
 require 'open-uri'
 
 
@@ -99,37 +97,6 @@ feeds.each do |feed|
   end
 end
 
-pool.shutdown 
+pool.shutdown
 
-
-# -------------------
-# STEP THREE: BUILD THE OUTPUT JSON AND HTML
-# -------------------
-
-s3 = Aws::S3::Client.new(region: ENV['AWS_DEFAULT_REGION'])
-
-# We can scan because we're using DynamoDB's TTL feature to automatically
-# cull old entries.
-result = dynamodb.scan(table_name: ENV['DYNAMODB_TABLE_NAME'])
-items = result.items.sort_by { |r| r['published'] }.reverse
-
-# Write out a JSON with all the items and store on S3
-s3.put_object(bucket: ENV['S3_BUCKET_NAME'], key: 'entries.json', body: items.to_json, content_type: 'application/json', cache_control: "max-age=3600")
-s3.put_object_acl({ acl: "public-read", bucket: ENV['S3_BUCKET_NAME'], key: 'entries.json' })
-
-# Map items into a slightly more useful structure for ERB
-items = items.map do |item|
-  {
-    published: Time.parse(item['published']),
-    title: item['title'],
-    url: item['url'],
-    feed: item['feed'],
-    feed_site: item['feed_site']
-  }
-end
-
-# Write out an HTML file with all the items rendered through our template
-res = ERB.new(File.read("template.erb")).result(binding)
-s3.put_object(bucket: ENV['S3_BUCKET_NAME'], key: 'index.html', body: res, content_type: 'text/html;charset=utf-8', cache_control: "max-age=3600")
-s3.put_object_acl({ acl: "public-read", bucket: ENV['S3_BUCKET_NAME'], key: 'index.html' })
-
+STDERR.puts "Finished"

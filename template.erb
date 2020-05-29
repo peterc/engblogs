@@ -1,7 +1,7 @@
 <html>
 <style>
   BODY {
-    font-family: monaco, menlo, monospace;
+    font-family: monaco, menlo, consolas, "courier new", monospace;
   }
 
   MAIN {
@@ -63,7 +63,7 @@
   h1 {
     font-weight: 300;
     font-size: 42px;
-    padding-left: 8px;
+    padding-left: 0px;
     margin-top: 40px;
   }
 </style>
@@ -72,6 +72,7 @@
 <main>
 
 <h1>engineering blogs</h1>
+<p>from <%= source_count %> sources [<a href="https://engblogs.s3.amazonaws.com/engblogs.opml">OPML</a>]</p>
 <p><em>last built at <%= Time.now %></em></p>
 
 <div class="items">
