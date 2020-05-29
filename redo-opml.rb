@@ -14,7 +14,7 @@ semaphore = Mutex.new
 
 pool = Thread.pool(40)
 
-opml = URI.open("http://#{ENV['S3_BUCKET_NAME']}.#{ENV['AWS_DEFAULT_REGION']}.amazonaws.com/#{ENV['S3_BUCKET_NAME']}.opml").read
+opml = URI.open("http://#{ENV['S3_BUCKET_NAME']}.s3.#{ENV['AWS_DEFAULT_REGION']}.amazonaws.com/#{ENV['S3_BUCKET_NAME']}.opml").read
 
 feeds = opml.scan(/<outline.*\/>/)
 

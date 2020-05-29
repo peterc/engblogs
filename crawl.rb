@@ -16,7 +16,7 @@ require 'open-uri'
 # STEP ONE: READ AND PARSE OPML FILE
 # -------------------
 
-opml = URI.open("http://#{ENV['S3_BUCKET_NAME']}.#{ENV['AWS_DEFAULT_REGION']}.amazonaws.com/#{ENV['S3_BUCKET_NAME']}.opml").read
+opml = URI.open("http://#{ENV['S3_BUCKET_NAME']}.s3.#{ENV['AWS_DEFAULT_REGION']}.amazonaws.com/#{ENV['S3_BUCKET_NAME']}.opml").read
 
 # Can't be bothered with the dependencies, so let's go oldschool..
 feeds = opml.scan(/<outline.*\/>/)
