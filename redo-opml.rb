@@ -2,7 +2,9 @@
 # longer load or parse properly.
 #
 # ruby redo-opml.rb > new.opml
-# aws s3 cp new.opml s3://engblogs/engblogs.opml
+# aws s3 cp new.opml s3://engblogs/ --acl public-read
+# ...
+# aws s3 cp engblogs.opml s3://engblogs/ --acl public-read 
 
 require 'dotenv'
 Dotenv.load
