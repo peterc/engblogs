@@ -3,6 +3,8 @@
 <head><title>Engineering Blogs</title></head>
 <body>
 <outline text="Engineering Blogs" title="Engineering Blogs">
+<outline type="rss" text="Ruby Programming Language" title="Ruby Programming Language=" xmlUrl="https://www.ruby-lang.org/en/feeds/news.rss" htmlUrl="https://www.ruby-lang.org/en/news/"/>
+<outline type="rss" text="Node.js" title="Node.js" xmlUrl="https://nodejs.org/en/feed/blog.xml" htmlUrl="https://nodejs.org/en/blog/"/>
 <outline type="rss" text="CustomInk" title="CustomInk" xmlUrl="https://technology.customink.com/feed.xml" htmlUrl="https://technology.customink.com/"/>
 <outline type="rss" text="Avenue Code" title="Avenue Code" xmlUrl="http://blog.avenuecode.com/rss.xml" htmlUrl="http://blog.avenuecode.com/"/>
 <outline type="rss" text="8th Light" title="8th Light" xmlUrl="https://8thlight.com/blog/feed/atom.xml" htmlUrl="https://8thlight.com/blog/"/>
