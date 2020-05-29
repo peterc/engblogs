@@ -85,7 +85,7 @@
     <h2><%= d %></h2>
     <% end %>
   <div class="item">
-    <div class="time"><%= item[:published].strftime("%H:%M") %></div>
+    <div class="time"><%= item[:published].strftime("%H") %>h</div>
     <div class="link">
       <div class="source"><%= item[:feed] %></div>
       <a href="<%= item[:url] %>"><%= item[:title] %></a>
@@ -97,6 +97,8 @@
 </div>
 
 </main>
+
+<p><em>Idea inspired by <a href="https://github.com/kilimchoi/engineering-blogs">the engineering-blogs list</a> (although it turns out a lot of them are dead/invalid so I cleaned it up and am adding more choices of my own).</em></p>
 
 </body>
 </html>
