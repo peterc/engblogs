@@ -227,7 +227,7 @@
 <outline type="rss" text="Shopify" title="Shopify" xmlUrl="http://engineering.shopify.com/blogs/engineering.atom" htmlUrl="https://engineering.shopify.com"/>
 <outline type="rss" text="Sift Science" title="Sift Science" xmlUrl="https://blog.siftscience.com/feed/" htmlUrl="https://blog.siftscience.com/?category=Engineering"/>
 <outline type="rss" text="Transferwise" title="Transferwise" xmlUrl="https://tech.transferwise.com/rss/" htmlUrl="http://tech.transferwise.com/"/>
-<outline type="rss" text="Stack Overflow" title="Stack Overflow" xmlUrl="https://stackoverflow.blog/engineering/feed/" htmlUrl="https://stackoverflow.blog/engineering/"/>
+<outline type="rss" text="Stack Overflow" title="Stack Overflow" xmlUrl="https://stackoverflow.blog/feed/" htmlUrl="https://stackoverflow.blog/"/>
 <outline type="rss" text="theScore" title="theScore" xmlUrl="http://techblog.thescore.com/feed.xml" htmlUrl="http://techblog.thescore.com/"/>
 <outline type="rss" text="Trivago" title="Trivago" xmlUrl="https://tech.trivago.com/index.xml" htmlUrl="http://tech.trivago.com/"/>
 <outline type="rss" text="ThoughtWorks" title="ThoughtWorks" xmlUrl="https://www.thoughtworks.com/rss/insights.xml" htmlUrl="https://www.thoughtworks.com/insights"/>
