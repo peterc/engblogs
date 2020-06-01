@@ -2,7 +2,8 @@
 <opml version="1.0">
 <head><title>Engineering Blogs</title></head>
 <body>
-<outline text="Engineering Blogs" title="Engineering Blogs">
+<outline text="Engineering Blogs" title="Engineering Blogs">  
+<outline type="rss" text="GumGum" title="GumGum" xmlUrl="https://medium.com/feed/gumgum-tech" htmlUrl="https://medium.com/gumgum-tech"/>
 <outline type="rss" text="V8 Team" title="V8 Team" xmlUrl="https://v8.dev/blog.atom" htmlUrl="https://v8.dev/"/>
 <outline type="rss" text="Ruby Programming Language" title="Ruby Programming Language=" xmlUrl="https://www.ruby-lang.org/en/feeds/news.rss" htmlUrl="https://www.ruby-lang.org/en/news/"/>
 <outline type="rss" text="Node.js" title="Node.js" xmlUrl="https://nodejs.org/en/feed/blog.xml" htmlUrl="https://nodejs.org/en/blog/"/>
