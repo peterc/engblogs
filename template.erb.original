@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Engineering Blogs</title>
+<meta name="viewport" content="width=device-width" />
+<style>
+  HTML { margin: 0; }
+  BODY {
+    font-family: monaco, menlo, consolas, "courier new", monospace;
+    border: 12px solid #88ddff;
+    margin: 0;
+  }
+
+  MAIN {
+    margin: 2em auto;
+    max-width: 80ch;
+  }
+
+  .item {
+    margin-bottom: 2ch;
+    display: grid;
+    grid-template-columns: 50px auto;
+  }
+
+  .items {
+  }
+
+  .time {
+    text-align: right;
+    font-size: 0.9em;
+    color: #333;
+  }
+
+  .link {
+    margin-left: 2ch;
+  }
+
+  .source {
+    margin-bottom: 4px;
+  }
+
+  .link A {
+    font-weight: 500;
+    font-size: 18px;
+    color: #0099dd;
+    text-decoration: none;
+  }
+
+  .link A:visited {
+    color: #777;
+    font-weight: 300 !important;
+  }
+  
+  .time, .source {
+    font-size: 0.85em;
+  }
+
+  .link A {
+    font-family: "Helvetica Neue", sans-serif;
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 24px;
+    padding-left: 8px;
+    margin-top: 36px;
+    margin-left: 58px;
+  }
+
+  h1 {
+    font-weight: 300;
+    font-size: 42px;
+    padding-left: 0px;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<main>
+
+<h1>engineering blogs</h1>
+<p>from <%= source_count %> sources [<a href="https://engblogs.s3.amazonaws.com/engblogs.opml">OPML</a>]</p>
+<p><em>last built at <%= Time.now %></em></p>
+
+<div class="items">
+<%
+  old_date = ''
+  items.each do |item|
+    d = item[:published].strftime("%Y-%m-%d") %>
+
+    <% if old_date != d %>
+    <h2><%= d %></h2>
+    <% end %>
+  <div class="item">
+    <div class="time"><%= item[:published].strftime("%H") %>h</div>
+    <div class="link">
+      <div class="source"><%= item[:feed] %></div>
+      <a href="<%= item[:url] %>"><%= item[:title] %></a>
+    </div>
+  </div>
+<% 
+  old_date = d
+  end %>
+</div>
+
+
+<p><em>Idea inspired by <a href="https://github.com/kilimchoi/engineering-blogs">the engineering-blogs list</a> (although it turns out a lot of them are dead/invalid so I cleaned it up and am adding more choices of my own).</em></p>
+
+<p><a href="https://github.com/peterc/engblogs">GitHub repo.</a></p>
+</main>
+
+
+</body>
+</html>

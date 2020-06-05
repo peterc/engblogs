@@ -3,6 +3,7 @@
 <head><title>Engineering Blogs</title></head>
 <body>
 <outline text="Engineering Blogs" title="Engineering Blogs">
+<outline type="rss" text="SeveralNines" title="SeveralNines" xmlUrl="https://severalnines.com/rss.xml" htmlUrl="https://severalnines.com/database-blog" />
 <outline type="rss" text="Learnk8s" title="Learnk8s" xmlUrl="https://learnk8s.io/rss.xml" htmlUrl="https://learnk8s.io/blog" />
 <outline type="rss" text="GumGum" title="GumGum" xmlUrl="https://medium.com/feed/gumgum-tech" htmlUrl="https://medium.com/gumgum-tech"/>
 <outline type="rss" text="V8 Team" title="V8 Team" xmlUrl="https://v8.dev/blog.atom" htmlUrl="https://v8.dev/"/>

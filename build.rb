@@ -5,6 +5,7 @@ require 'aws-sdk-s3'
 require 'erb'
 require 'open-uri'
 
+DEBUG = ARGV.join =~ /test/
 
 # -------------------
 # BUILD THE OUTPUT JSON AND HTML
@@ -42,7 +43,15 @@ end
 
 # Write out an HTML file with all the items rendered through our template
 res = ERB.new(File.read("template.erb")).result(binding)
-s3.put_object(bucket: ENV['S3_BUCKET_NAME'], key: 'index.html', body: res, content_type: 'text/html;charset=utf-8', cache_control: "max-age=600")
-s3.put_object_acl({ acl: "public-read", bucket: ENV['S3_BUCKET_NAME'], key: 'index.html' })
+
+if DEBUG
+  STDERR.puts "Uploading to test.html"
+  s3.put_object(bucket: ENV['S3_BUCKET_NAME'], key: 'test.html', body: res, content_type: 'text/html;charset=utf-8', cache_control: "max-age=0")
+  s3.put_object_acl({ acl: "public-read", bucket: ENV['S3_BUCKET_NAME'], key: 'test.html' })
+else
+  STDERR.puts "Uploading to index.html"
+  s3.put_object(bucket: ENV['S3_BUCKET_NAME'], key: 'index.html', body: res, content_type: 'text/html;charset=utf-8', cache_control: "max-age=600")
+  s3.put_object_acl({ acl: "public-read", bucket: ENV['S3_BUCKET_NAME'], key: 'index.html' })
+end
 
 STDERR.puts "Uploaded"
