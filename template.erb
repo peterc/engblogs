@@ -10,13 +10,13 @@
 
   MAIN {
     margin: 2em auto;
-    max-width: 80ch;
+    max-width: 100ch;
   }
 
   .item {
     margin-bottom: 2ch;
     display: grid;
-    grid-template-columns: 1fr minmax(max-content, 40px) 4fr;
+    grid-template-columns: minmax(max-content, 25%) 1fr;
   }
   
   h2 {
@@ -31,12 +31,14 @@
     margin-top: 30px;
   }
 
-  .time { grid-column: 2;   grid-row: 1 }
-  .link { grid-column: 3;   grid-row: 1 }
+  /* .time { grid-column: 2;   grid-row: 1 } */
+  .link { grid-column: 2;   grid-row: 1 }
   .source { grid-column: 1; grid-row: 1 }
 
-  .source { text-align: right; }
+  .source { text-align: right; color: #999; }
   .link { font-family: Verdana, arial, sans-serif; }
+  .time { color: #999; padding: 0px 6px; }
+  .link A { text-decoration: none; }
 </style>
 </head>
 <body>
@@ -57,7 +59,7 @@
     <div class="item"><div class="link"><h2><%= d %></h2></div></div>
     <% end %>
   <div class="item">
-    <div class="time"><%= item[:published].strftime("%H") %>h</div>
+    <!-- div class="time"><%= item[:published].strftime("%H") %>h</div -->
     <div class="link"><a href="<%= item[:url] %>"><%= item[:title] %></a></div>
     <div class="source"><%= item[:feed] %></div>
   </div>

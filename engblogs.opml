@@ -292,7 +292,7 @@
 <outline type="rss" text="Antirez" title="Antirez" xmlUrl="http://antirez.com/rss" htmlUrl="http://antirez.com/latest/0"/>
 <outline type="rss" text="Adam Leventhal" title="Adam Leventhal" xmlUrl="http://dtrace.org/blogs/ahl/feed/" htmlUrl="http://dtrace.org/blogs/ahl/"/>
 <outline type="rss" text="Bjørn Johansen" title="Bjørn Johansen" xmlUrl="https://bjornjohansen.no/feed" htmlUrl="https://bjornjohansen.no/"/>
-<outline type="rss" text="Zendesk(old)" title="Zendesk(old)" xmlUrl="https://developerblog.zendesk.com/feed" htmlUrl="https://developer.zendesk.com/blog"/>
+<outline type="rss" text="Zendesk" title="Zendesk" xmlUrl="https://developerblog.zendesk.com/feed" htmlUrl="https://developer.zendesk.com/blog"/>
 <outline type="rss" text="Stackshare" title="Stackshare" xmlUrl="https://stackshare.io/featured-posts.atom" htmlUrl="https://stackshare.io/feed"/>
 <outline type="rss" text="Clay McLeod" title="Clay McLeod" xmlUrl="http://blog.claymcleod.io/atom.xml" htmlUrl="http://blog.claymcleod.io/"/>
 <outline type="rss" text="Daily Tech Video" title="Daily Tech Video" xmlUrl="http://dailytechvideo.com/feed/" htmlUrl="http://dailytechvideo.com/"/>
