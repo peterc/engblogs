@@ -3,6 +3,14 @@
 <title>Engineering Blogs</title>
 <meta name="viewport" content="width=device-width" />
 <style>
+HTML {
+  margin: 0;
+  border-top: 8px solid #08f;
+}
+
+  A { color: #06c; }
+  A:visited { color: #aaa; }
+
   BODY {
     font-family: verdana, monaco, menlo, consolas, "courier new", monospace;
     margin: 12px;
@@ -10,19 +18,20 @@
 
   MAIN {
     margin: 2em auto;
-    max-width: 100ch;
+    max-width: 90ch;
   }
 
   .item {
-    margin-bottom: 2ch;
+    margin-bottom: 1ch;
     display: grid;
-    grid-template-columns: minmax(max-content, 25%) 1fr;
+    grid-template-columns: minmax(max-content, 20%) 1fr;
   }
   
   h2 {
     font-weight: 300;
     font-size: 24px;
     margin-top: 36px;
+    margin-bottom: 24px;
   }
 
   h1 {
@@ -35,7 +44,7 @@
   .link { grid-column: 2;   grid-row: 1 }
   .source { grid-column: 1; grid-row: 1 }
 
-  .source { text-align: right; color: #999; }
+  .source { text-align: left; padding-right: 12px; }
   .link { font-family: Verdana, arial, sans-serif; }
   .time { color: #999; padding: 0px 6px; }
   .link A { text-decoration: none; }
@@ -45,9 +54,8 @@
 
 <main>
 
-<h1>engineering blogs</h1>
-<p>from <%= source_count %> sources [<a href="https://engblogs.s3.amazonaws.com/engblogs.opml">OPML</a>]</p>
-<p><em>last built at <%= Time.now %></em></p>
+<h1><%= source_count %> engineering blogs <sup style="font-size: 14px"><a href="https://engblogs.s3.amazonaws.com/engblogs.opml">OPML</a></sup></h1>
+<p><em>last built at <%= Time.now.getutc.strftime("%Y-%m-%d %H:%M UTC") %></em></p>
 
 <div class="items">
 <%
@@ -56,7 +64,7 @@
     d = item[:published].strftime("%Y-%m-%d") %>
 
     <% if old_date != d %>
-    <div class="item"><div class="link"><h2><%= d %></h2></div></div>
+    <h2><%= d %></h2>
     <% end %>
   <div class="item">
     <!-- div class="time"><%= item[:published].strftime("%H") %>h</div -->
