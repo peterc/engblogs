@@ -92,7 +92,6 @@
 <outline type="rss" text="Gilt" title="Gilt" xmlUrl="http://tech.gilt.com/rss" htmlUrl="http://tech.gilt.com"/>
 <outline type="rss" text="Envoy" title="Envoy" xmlUrl="https://envoy.engineering/feed" htmlUrl="https://envoy.engineering/"/>
 <outline type="rss" text="Flipboard" title="Flipboard" xmlUrl="http://engineering.flipboard.com/feed.xml" htmlUrl="http://engineering.flipboard.com/"/>
-<outline type="rss" text="Freeletics" title="Freeletics" xmlUrl="https://freeletics.engineering/feed.xml" htmlUrl="https://freeletics.engineering/"/>
 <outline type="rss" text="Evernote" title="Evernote" xmlUrl="https://evernote.com/blog/feed/" htmlUrl="https://evernote.com/blog/"/>
 <outline type="rss" text="Drivy" title="Drivy" xmlUrl="https://drivy.engineering/feed.xml" htmlUrl="https://drivy.engineering/"/>
 <outline type="rss" text="Evil Martians" title="Evil Martians" xmlUrl="https://evilmartians.com/chronicles.atom" htmlUrl="https://evilmartians.com/chronicles/"/>
