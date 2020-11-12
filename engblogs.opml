@@ -3,6 +3,7 @@
 <head><title>Engineering Blogs</title></head>
 <body>
 <outline text="Engineering Blogs" title="Engineering Blogs">
+<outline type="rss" text="Nicolas Fränkel" title="Nicolas Fränkel" xmlUrl="https://blog.frankel.ch/feed.xml" htmlUrl="https://blog.frankel.ch/" /> 
 <outline type="rss" text="Markus Hatvan" title="Markus Hatvan" xmlUrl="https://markushatvan.com/rss.xml" htmlUrl="https://markushatvan.com/" />
 <outline type="rss" text="HTTP Toolkit" title="HTTP Toolkit" xmlUrl="https://httptoolkit.tech/rss.xml" htmlUrl="https://httptoolkit.tech/blog" />
 <outline type="rss" text="Snyk" title="Snyk" xmlUrl="https://snyk.io/blog/category/engineering/feed/" htmlUrl="https://snyk.io/blog" />
