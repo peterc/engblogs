@@ -41,6 +41,9 @@ items = items.map do |item|
   }
 end
 
+# Don't show future items
+items.delete_if { |item| item[:published] > Time.now }
+
 # Write out an HTML file with all the items rendered through our template
 res = ERB.new(File.read("template.erb")).result(binding)
 
