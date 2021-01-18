@@ -61,7 +61,6 @@
 <outline type="rss" text="Confluent" title="Confluent" xmlUrl="https://www.confluent.io/feed/" htmlUrl="https://www.confluent.io/blog"/>
 <outline type="rss" text="Buzzfeed" title="Buzzfeed" xmlUrl="https://tech.buzzfeed.com/feed" htmlUrl="https://www.buzzfeed.com/techblog"/>
 <outline type="rss" text="Curalate" title="Curalate" xmlUrl="http://engineering.curalate.com/feed.xml" htmlUrl="http://engineering.curalate.com/"/>
-<outline type="rss" text="Criteo" title="Criteo" xmlUrl="https://medium.com/feed/criteo-labs" htmlUrl="https://medium.com/criteo-labs"/>
 <outline type="rss" text="Brandwatch" title="Brandwatch" xmlUrl="https://engineering.brandwatch.com/rss/" htmlUrl="http://engineering.brandwatch.com/"/>
 <outline type="rss" text="Benchling" title="Benchling" xmlUrl="https://benchling.engineering/feed" htmlUrl="https://benchling.engineering/"/>
 <outline type="rss" text="Entelo" title="Entelo" xmlUrl="https://sourcecode.entelo.com/feed.xml" htmlUrl="https://sourcecode.entelo.com/"/>
@@ -197,7 +196,6 @@
 <outline type="rss" text="Redino" title="Redino" xmlUrl="http://redino.net/blog/feed/" htmlUrl="http://redino.net/blog/"/>
 <outline type="rss" text="Scrapinghub" title="Scrapinghub" xmlUrl="https://blog.scrapinghub.com/rss.xml" htmlUrl="https://blog.scrapinghub.com/"/>
 <outline type="rss" text="RetailMeNot" title="RetailMeNot" xmlUrl="https://medium.com/feed/retailmenot-engineering" htmlUrl="https://medium.com/retailmenot-engineering/"/>
-<outline type="rss" text="RoseHosting" title="RoseHosting" xmlUrl="https://www.rosehosting.com/blog/feed/" htmlUrl="https://www.rosehosting.com/blog/"/>
 <outline type="rss" text="OLX" title="OLX" xmlUrl="https://tech.olx.com/feed" htmlUrl="https://tech.olx.com/"/>
 <outline type="rss" text="RisingStack" title="RisingStack" xmlUrl="https://blog.risingstack.com/rss/" htmlUrl="https://blog.risingstack.com/"/>
 <outline type="rss" text="Postmark" title="Postmark" xmlUrl="https://postmarkapp.com/blog/feed.atom" htmlUrl="https://postmarkapp.com/blog"/>
