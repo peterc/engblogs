@@ -3,6 +3,7 @@
 <head><title>Engineering Blogs</title></head>
 <body>
 <outline text="Engineering Blogs" title="Engineering Blogs">
+<outline type="rss" text="Replit" title="Replit" xmlUrl="https://blog.replit.com/feed.xml" />
 <outline type="rss" text="Abhinav Sarkar" title="Abhinav Sarkar" xmlUrl="https://abhinavsarkar.net/tags/programming/feed.atom" htmlUrl="https://abhinavsarkar.net/" />
 <outline type="rss" text="Strava Engineering" title="Strava Engineering" xmlUrl="https://medium.com/feed/strava-engineering" htmlUrl="https://medium.com/strava-engineering" />
 <outline type="rss" text="Nicolas Fränkel" title="Nicolas Fränkel" xmlUrl="https://blog.frankel.ch/feed.xml" htmlUrl="https://blog.frankel.ch/" /> 
