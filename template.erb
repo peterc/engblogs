@@ -100,7 +100,7 @@ HTML {
     <% end %>
   <div class="item">
     <!-- div class="time"><%= item[:published].strftime("%H") %>h</div -->
-    <div class="link"><a href="<%= item[:url] %>"><%= item[:title] %></a></div>
+    <div class="link"><a href="<%= item[:url] %>"><%= CGI::escape_html(item[:title]) %></a></div>
     <div class="source"><span><%= item[:feed] %>&nbsp;</span></div>
   </div>
 <% 
