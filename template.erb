@@ -24,6 +24,7 @@ HTML {
   .item {
     margin-bottom: 1ch;
     display: grid;
+    align-items: start;
     grid-template-columns: minmax(max-content, 24%) 1fr;
   }
   
@@ -44,13 +45,15 @@ HTML {
   .link { grid-column: 2;   grid-row: 1 }
   .source { grid-column: 1; grid-row: 1 }
 
-  .source { text-align: left; padding-right: 12px;
+  .source { 
+    text-align: left;
+    padding-right: 12px;
+    margin-right:12px;
     background: linear-gradient(180deg, 
         rgba(0,0,0,0) calc(50% - 1px), 
         rgba(220,220,220,1) calc(50%), 
         rgba(0,0,0,0) calc(50% + 1px)
     );
-    align-self: center;
   }
   .source span {
     background-color: #fff;
@@ -59,9 +62,6 @@ HTML {
   }
   .link {
     font-family: Verdana, arial, sans-serif;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
   .time { color: #999; padding: 0px 6px; }
   .link A { text-decoration: none; }
