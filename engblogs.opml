@@ -3,6 +3,11 @@
 <head><title>Engineering Blogs</title></head>
 <body>
 <outline text="Engineering Blogs" title="Engineering Blogs">
+<outline type="rss" text="Robin Wieruch" title="Robin Wieruch" htmlUrl="https://www.robinwieruch.de/blog/" xmlUrl="https://www.robinwieruch.de/index.xml" />
+<outline type="rss" text="Dan Abramov" title="Dan Abramov" htmlUrl="https://overreacted.io/" xmlUrl="https://overreacted.io/rss.xml" />
+<outline type="rss" text="Angular" title="Angular" htmlUrl="https://blog.angular.io/" xmlUrl="https://blog.angular.io/feed" />
+<outline type="rss" text="Vercel" title="Vercel" htmlUrl="https://vercel.com/blog" xmlUrl="https://vercel.com/atom" />
+<outline type="rss" text="Microsoft TypeScript" title="Microsoft TypeScript" htmlUrl="https://devblogs.microsoft.com/typescript/" xmlUrl="https://devblogs.microsoft.com/typescript/feed" />
 <outline type="rss" text="Teleport" title="Teleport" htmlUrl="https://goteleport.com/blog/" xmlUrl="https://goteleport.com/blog/rss.xml" />
 <outline type="rss" text="Mercari" title="Mercari" htmlUrl="https://engineering.mercari.com/en/" xmlUrl="https://engineering.mercari.com/en/blog/feed.xml" />
 <outline type="rss" text="Replit" title="Replit" htmlUrl="https://blog.replit.com/" xmlUrl="https://blog.replit.com/feed.xml" />
