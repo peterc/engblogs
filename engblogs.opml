@@ -3,6 +3,7 @@
 <head><title>Engineering Blogs</title></head>
 <body>
 <outline text="Engineering Blogs" title="Engineering Blogs">
+<outline type="rss" text="Clickhouse" title="Clickhouse" htmlUrl="https://clickhouse.com/blog" xmlUrl="https://clickhouse.com/rss.xml" />
 <outline type="rss" text="Daniel Stenberg" title="Daniel Stenberg" htmlUrl="https://daniel.haxx.se/blog/" xmlUrl="https://daniel.haxx.se/blog/feed/" />
 <outline type="rss" text="Pulumi" title="Pulumi" htmlUrl="https://www.pulumi.com/blog/" xmlUrl="https://www.pulumi.com/blog/rss.xml" />
 <outline type="rss" text="Robin Wieruch" title="Robin Wieruch" htmlUrl="https://www.robinwieruch.de/blog/" xmlUrl="https://www.robinwieruch.de/index.xml" />
