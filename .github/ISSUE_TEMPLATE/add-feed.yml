@@ -1,0 +1,26 @@
+name: Suggest a feed
+description: Suggest an engineering blog to add to the aggregator
+title: "Add feed: "
+labels: ["feed-suggestion"]
+body:
+  - type: input
+    id: blog-name
+    attributes:
+      label: Blog name
+      placeholder: e.g. Stripe Engineering
+    validations:
+      required: true
+  - type: input
+    id: blog-url
+    attributes:
+      label: Blog URL
+      placeholder: e.g. https://stripe.com/blog/engineering
+    validations:
+      required: true
+  - type: input
+    id: feed-url
+    attributes:
+      label: RSS/Atom feed URL
+      placeholder: e.g. https://stripe.com/blog/engineering/feed
+    validations:
+      required: true
