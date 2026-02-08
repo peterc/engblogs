@@ -3,6 +3,11 @@ name: Build and Deploy
 on:
   push:
     branches: [master]
+    paths:
+      - 'engblogs.opml'
+      - 'template.html'
+      - 'main.go'
+      - '.github/workflows/build.yml'
   schedule:
     - cron: '0 */4 * * *'  # Every 4 hours
   workflow_dispatch:        # Manual trigger
