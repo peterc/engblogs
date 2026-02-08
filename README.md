@@ -1,24 +1,28 @@
 # Engineering Blogs
 
-Source for [engineeringblogs.xyz](https://engineeringblogs.xyz/) -- a single-page aggregator of engineering blog posts from the past seven days.
+[engineeringblogs.xyz](https://engineeringblogs.xyz/) aggregates posts from hundreds of engineering blogs into a single page, covering the past seven days. It's rebuilt every few hours automatically.
 
-The site is rebuilt every 4 hours by GitHub Actions and deployed to GitHub Pages. No database, no JS, no external services -- just a Go script that fetches RSS/Atom feeds and renders a static HTML page.
+No accounts, no algorithms, no JavaScript -- just a list of links.
 
-## Requirements
+## Suggest a feed
 
-- Go 1.22+
-- Python 3 (for the local dev server)
+Know a good engineering blog that's missing? [Open an issue](https://github.com/peterc/engblogs/issues/new?template=add-feed.yml) with the blog name and RSS/Atom feed URL, or edit `engblogs.opml` directly and submit a PR. New feeds show up on the site within minutes of merging.
 
-## Usage
+## How it works
 
-`make build` -- Fetches all feeds from `engblogs.opml`, collects posts from the last 7 days, and generates `public/index.html`. A `cache.json` file stores ETags for conditional GET on subsequent runs.
+A Go script reads `engblogs.opml`, fetches every feed in parallel (with conditional GET to be polite), collects posts from the last 7 days, and renders a static HTML page. GitHub Actions runs this every 4 hours and deploys to GitHub Pages.
 
-`make render` -- Rebuilds HTML from cache without fetching feeds. Fast, useful for tweaking the template.
+There's no database. Feed entries are ephemeral -- if a post falls outside the 7-day window, it's gone.
 
-`make dev` -- Renders then serves `public/` at http://localhost:8080.
+## Running locally
 
-`make clean` -- Removes the `public/` directory and `cache.json`.
+Requires Go 1.22+ and Python 3.
 
-## Adding a feed
+    make build    # fetch all feeds and generate public/index.html
+    make render   # rebuild HTML from cache (no fetching, fast)
+    make dev      # render and serve at http://localhost:8080
+    make clean    # remove public/ and cache.json
 
-[Open an issue](https://github.com/peterc/engblogs/issues/new?template=add-feed.yml) with the blog name and feed URL, or edit `engblogs.opml` directly and open a PR. New feeds show up on the site within minutes of merging.
+## License
+
+The feed list (`engblogs.opml`) is community-maintained. The rest of the code is MIT.
