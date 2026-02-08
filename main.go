@@ -176,6 +176,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if err := writeCNAME(); err != nil {
+		fmt.Fprintf(os.Stderr, "Error writing CNAME: %v\n", err)
+		os.Exit(1)
+	}
+
 	fmt.Fprintf(os.Stderr, "Built public/index.html successfully\n")
 }
 
@@ -550,5 +555,9 @@ func copyOPML() error {
 		return err
 	}
 	return os.WriteFile(filepath.Join(outputDir, "engblogs.opml"), data, 0644)
+}
+
+func writeCNAME() error {
+	return os.WriteFile(filepath.Join(outputDir, "CNAME"), []byte("engineeringblogs.xyz\n"), 0644)
 }
 
