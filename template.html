@@ -3,43 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Recent posts from {{.FeedCount}} engineering blogs, updated every few hours.">
 <title>Engineering Blogs — {{.EntryCount}} posts from {{.FeedCount}} feeds</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #333;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #222;
   background: #fff;
-  border-top: 4px solid #08f;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 1060px;
   margin: 0 auto;
-  padding: 2.5em 1.5em 3em;
+  padding: 0 1.25em 3em;
 }
 
 header {
-  margin-bottom: 2.5em;
+  background: #222;
+  color: #fff;
+  padding: 10px 1.25em;
+  margin-bottom: 1.25em;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
-  margin-bottom: 0.25em;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .subtitle {
-  color: #888;
-  font-size: 0.85em;
+  color: #999;
 }
 
 .subtitle a {
-  color: #08f;
+  color: #6bf;
   text-decoration: none;
 }
 
@@ -48,54 +58,61 @@ h1 {
 }
 
 h2 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #08f;
-  margin-top: 2.5em;
-  margin-bottom: 0.75em;
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid #e8e8e8;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #555;
+  padding: 4px 6px;
+  margin-top: 1.5em;
+  margin-bottom: 0;
 }
 
 .entries {
   display: grid;
-  grid-template-columns: minmax(max-content, 200px) 1fr;
+  grid-template-columns: 210px 1fr;
   gap: 0;
+  border-left: 3px solid #e0e0e0;
 }
 
 .entry {
   display: contents;
 }
 
+.entry:nth-child(odd) .source,
+.entry:nth-child(odd) .title {
+  background: #f6f6f6;
+}
+
 .source {
-  padding: 5px 1em 5px 0;
-  font-size: 0.8em;
-  color: #999;
+  padding: 5px 10px 5px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 1px solid #eee;
 }
 
 .source a {
-  color: #999;
+  color: #555;
   text-decoration: none;
 }
 
 .source a:hover {
-  color: #08f;
+  color: #000;
 }
 
 .title {
-  padding: 5px 0;
-  border-bottom: 1px solid #f3f3f3;
+  padding: 5px 8px;
+  border-bottom: 1px solid #eee;
 }
 
 .title a {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   color: #1a1a1a;
   text-decoration: none;
 }
@@ -105,45 +122,58 @@ h2 {
 }
 
 .title a:hover {
-  color: #08f;
-}
-
-.time {
-  font-size: 0.75em;
-  color: #ccc;
-  margin-left: 0.75em;
+  color: #06c;
+  text-decoration: underline;
 }
 
 footer {
-  margin-top: 3em;
-  padding-top: 1.5em;
-  border-top: 1px solid #e8e8e8;
-  font-size: 0.8em;
-  color: #999;
+  margin-top: 2.5em;
+  padding-top: 1em;
+  border-top: 2px solid #222;
+  font-size: 13px;
+  color: #888;
 }
 
 footer a {
-  color: #08f;
+  color: #555;
   text-decoration: none;
+  font-weight: 600;
 }
 
 footer a:hover {
+  color: #000;
   text-decoration: underline;
 }
 
 @media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 0.25em;
+    align-items: flex-start;
+  }
   .entries {
     display: block;
+    border-left: 2px solid #e0e0e0;
   }
   .entry {
     display: block;
-    padding: 8px 0;
-    border-bottom: 1px solid #f3f3f3;
+    padding: 6px 0 6px 8px;
+    border-bottom: 1px solid #eee;
+  }
+  .entry:nth-child(odd) {
+    background: #f6f6f6;
+  }
+  .entry:nth-child(odd) .source,
+  .entry:nth-child(odd) .title {
+    background: transparent;
   }
   .source {
     border-bottom: none;
-    padding: 0 0 2px 0;
+    padding: 0;
+    font-size: 12px;
+    color: #888;
   }
+  .source a { color: #888; }
   .title {
     border-bottom: none;
     padding: 0;
@@ -158,8 +188,8 @@ footer a:hover {
 <header>
   <h1>Engineering Blogs</h1>
   <p class="subtitle">
-    {{.EntryCount}} posts from {{.FeedCount}} feeds, last 7 days.
-    <a href="engblogs.opml">OPML</a>
+    {{.EntryCount}} posts / {{.FeedCount}} feeds / 7 days
+    &middot; <a href="engblogs.opml">OPML</a>
   </p>
 </header>
 
@@ -169,14 +199,14 @@ footer a:hover {
 {{range .Entries}}
 <div class="entry">
   <span class="source"><a href="{{.BlogURL}}">{{.BlogName}}</a></span>
-  <span class="title"><a href="{{.URL}}">{{.Title}}</a><span class="time">{{.Published.Format "15:04"}}</span></span>
+  <span class="title"><a href="{{.URL}}">{{.Title}}</a></span>
 </div>
 {{end}}
 </div>
 {{end}}
 
 <footer>
-  <a href="https://github.com/peterc/engblogs">GitHub</a> — Suggest a feed by opening an issue or PR.
+  <a href="https://github.com/peterc/engblogs/issues">Suggest a feed</a> by opening an issue or PR on <a href="https://github.com/peterc/engblogs">GitHub</a>.
 </footer>
 
 </div>
