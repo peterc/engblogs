@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"encoding/xml"
+	"flag"
 	"fmt"
 	"html/template"
 	"io"
@@ -120,6 +121,9 @@ type TemplateData struct {
 }
 
 func main() {
+	skipFetch := flag.Bool("skip-fetch", false, "Skip fetching feeds, rebuild HTML from cache only")
+	flag.Parse()
+
 	feeds, err := parseOPML(opmlFile)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error parsing OPML: %v\n", err)
@@ -127,11 +131,22 @@ func main() {
 	}
 
 	feeds = deduplicateFeeds(feeds)
-	fmt.Fprintf(os.Stderr, "Parsed %d unique feeds from OPML\n", len(feeds))
-
 	cache := loadCache(cacheFile)
-	entries, stats := fetchAllFeeds(feeds, cache)
-	saveCache(cacheFile, cache)
+
+	var entries []Entry
+	if *skipFetch {
+		fmt.Fprintf(os.Stderr, "Skipping fetch, rebuilding from cache\n")
+		for _, ce := range cache {
+			entries = append(entries, ce.Entries...)
+		}
+	} else {
+		fmt.Fprintf(os.Stderr, "Parsed %d unique feeds from OPML\n", len(feeds))
+		var stats fetchStats
+		entries, stats = fetchAllFeeds(feeds, cache)
+		saveCache(cacheFile, cache)
+		fmt.Fprintf(os.Stderr, "Feeds: %d total, %d ok, %d failed\n",
+			stats.total, stats.success, stats.failed)
+	}
 
 	cutoff := time.Now().UTC().AddDate(0, 0, -maxDays)
 	var recent []Entry
@@ -149,8 +164,7 @@ func main() {
 
 	groups := groupByDate(recent)
 
-	fmt.Fprintf(os.Stderr, "Feeds: %d total, %d ok, %d failed | Entries: %d (last 7 days)\n",
-		stats.total, stats.success, stats.failed, len(recent))
+	fmt.Fprintf(os.Stderr, "Entries: %d (last 7 days)\n", len(recent))
 
 	if err := renderHTML(groups, len(feeds), len(recent)); err != nil {
 		fmt.Fprintf(os.Stderr, "Error rendering HTML: %v\n", err)
@@ -509,7 +523,7 @@ func renderHTML(groups []DateGroup, feedCount, entryCount int) error {
 		return err
 	}
 
-	tmpl, err := template.New("index").Parse(htmlTemplate)
+	tmpl, err := template.New("template.html").ParseFiles("template.html")
 	if err != nil {
 		return err
 	}
@@ -538,142 +552,3 @@ func copyOPML() error {
 	return os.WriteFile(filepath.Join(outputDir, "engblogs.opml"), data, 0644)
 }
 
-// --- HTML template ---
-
-var htmlTemplate = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Engineering Blogs — {{.EntryCount}} posts from {{.FeedCount}} feeds</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #333;
-  background: #fff;
-  padding: 2em 12px;
-  max-width: 90ch;
-  margin: 0 auto;
-  border-top: 3px solid #08f;
-}
-h1 {
-  font-size: 42px;
-  font-weight: 300;
-  margin-bottom: 0.1em;
-}
-.subtitle {
-  color: #999;
-  font-size: 0.85em;
-  margin-bottom: 2em;
-}
-.subtitle a { color: #06c; text-decoration: none; }
-.subtitle a:hover { text-decoration: underline; }
-h2 {
-  font-size: 24px;
-  font-weight: 300;
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-  color: #333;
-}
-.entry {
-  display: flex;
-  gap: 0.5em;
-  padding: 4px 0;
-  align-items: baseline;
-}
-.source {
-  flex: 0 0 auto;
-  max-width: 24%;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  color: #999;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  position: relative;
-  padding-right: 0.75em;
-}
-.source::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 999px;
-  height: 1px;
-  background: #ddd;
-  z-index: -1;
-}
-.source a { color: #999; text-decoration: none; }
-.source a:hover { color: #06c; }
-.title {
-  flex: 1;
-  min-width: 0;
-  background: #fff;
-  padding-left: 0.5em;
-}
-.title a {
-  font-family: Verdana, Arial, sans-serif;
-  color: #06c;
-  text-decoration: none;
-}
-.title a:visited { color: #aaa; }
-.title a:hover { text-decoration: underline; }
-.time {
-  font-size: 0.75em;
-  color: #bbb;
-  margin-left: 0.5em;
-  white-space: nowrap;
-}
-footer {
-  margin-top: 3em;
-  padding-top: 1em;
-  border-top: 1px solid #ddd;
-  font-size: 0.8em;
-  color: #999;
-}
-footer a { color: #06c; text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-@media (max-width: 720px) {
-  .entry {
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 18px;
-  }
-  .source {
-    max-width: none;
-    padding-right: 0;
-  }
-  .source::after { display: none; }
-  .title { padding-left: 0; }
-}
-</style>
-</head>
-<body>
-
-<h1>Engineering Blogs</h1>
-<p class="subtitle">
-  {{.EntryCount}} posts from {{.FeedCount}} feeds in the last 7 days.
-  Built {{.BuiltAt}}.
-  <a href="engblogs.opml">OPML</a>
-</p>
-
-{{range .Groups}}
-<h2>{{.Date}}</h2>
-{{range .Entries}}
-<div class="entry">
-  <span class="source"><a href="{{.BlogURL}}">{{.BlogName}}</a></span>
-  <span class="title"><a href="{{.URL}}">{{.Title}}</a><span class="time">{{.Published.Format "15:04"}}</span></span>
-</div>
-{{end}}
-{{end}}
-
-<footer>
-  <a href="https://github.com/peterc/engblogs">GitHub</a> — Suggest a feed by opening an issue or PR.
-</footer>
-
-</body>
-</html>
-`

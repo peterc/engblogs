@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering Blogs — {{.EntryCount}} posts from {{.FeedCount}} feeds</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+  border-top: 4px solid #08f;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5em 1.5em 3em;
+}
+
+header {
+  margin-bottom: 2.5em;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.25em;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 0.85em;
+}
+
+.subtitle a {
+  color: #08f;
+  text-decoration: none;
+}
+
+.subtitle a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #08f;
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.entries {
+  display: grid;
+  grid-template-columns: minmax(max-content, 200px) 1fr;
+  gap: 0;
+}
+
+.entry {
+  display: contents;
+}
+
+.source {
+  padding: 5px 1em 5px 0;
+  font-size: 0.8em;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.source a {
+  color: #999;
+  text-decoration: none;
+}
+
+.source a:hover {
+  color: #08f;
+}
+
+.title {
+  padding: 5px 0;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.title a {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.title a:visited {
+  color: #aaa;
+}
+
+.title a:hover {
+  color: #08f;
+}
+
+.time {
+  font-size: 0.75em;
+  color: #ccc;
+  margin-left: 0.75em;
+}
+
+footer {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid #e8e8e8;
+  font-size: 0.8em;
+  color: #999;
+}
+
+footer a {
+  color: #08f;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .entries {
+    display: block;
+  }
+  .entry {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f3f3;
+  }
+  .source {
+    border-bottom: none;
+    padding: 0 0 2px 0;
+  }
+  .title {
+    border-bottom: none;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+  <h1>Engineering Blogs</h1>
+  <p class="subtitle">
+    {{.EntryCount}} posts from {{.FeedCount}} feeds, last 7 days.
+    <a href="engblogs.opml">OPML</a>
+  </p>
+</header>
+
+{{range .Groups}}
+<h2>{{.Date}}</h2>
+<div class="entries">
+{{range .Entries}}
+<div class="entry">
+  <span class="source"><a href="{{.BlogURL}}">{{.BlogName}}</a></span>
+  <span class="title"><a href="{{.URL}}">{{.Title}}</a><span class="time">{{.Published.Format "15:04"}}</span></span>
+</div>
+{{end}}
+</div>
+{{end}}
+
+<footer>
+  <a href="https://github.com/peterc/engblogs">GitHub</a> — Suggest a feed by opening an issue or PR.
+</footer>
+
+</div>
+
+</body>
+</html>

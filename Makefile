@@ -1,9 +1,12 @@
-.PHONY: build dev clean
+.PHONY: build render dev clean
 
 build:
 	go run main.go
 
-dev: build
+render:
+	go run main.go -skip-fetch
+
+dev: render
 	@echo "Serving public/ at http://localhost:8080"
 	@cd public && python3 -m http.server 8080
 
