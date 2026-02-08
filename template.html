@@ -3,14 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Recent posts from {{.FeedCount}} engineering blogs, updated every few hours.">
 <title>Engineering Blogs — {{.EntryCount}} posts from {{.FeedCount}} feeds</title>
+<meta name="description" content="Recent posts from {{.FeedCount}} engineering blogs, updated every few hours. No algorithms, no accounts, just links.">
+<meta name="author" content="Peter Cooper">
+<link rel="canonical" href="https://engineeringblogs.xyz/">
+<link rel="alternate" type="application/rss+xml" title="Engineering Blogs OPML" href="https://engineeringblogs.xyz/engblogs.opml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Engineering Blogs">
+<meta property="og:description" content="Recent posts from {{.FeedCount}} engineering blogs, updated every few hours.">
+<meta property="og:url" content="https://engineeringblogs.xyz/">
+<meta property="og:site_name" content="Engineering Blogs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Engineering Blogs">
+<meta name="twitter:description" content="Recent posts from {{.FeedCount}} engineering blogs, updated every few hours.">
+<meta name="theme-color" content="#c42">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   color: #222;
   background: #fff;
@@ -23,48 +36,55 @@ body {
 }
 
 header {
-  background: #222;
+  background: linear-gradient(135deg, #c42 0%, #e63 100%);
   color: #fff;
-  padding: 10px 1.25em;
+  padding: 20px 1.25em;
   margin-bottom: 1.25em;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 1.5em;
-  flex-wrap: wrap;
+  font-size: 15px;
   max-width: 1060px;
   margin-left: auto;
   margin-right: auto;
 }
 
 h1 {
-  font-size: 15px;
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin-bottom: 2px;
+}
+
+h1 span {
+  display: inline-block;
+  border-bottom: 3px solid rgba(255,255,255,0.4);
+  padding-bottom: 2px;
 }
 
 .subtitle {
-  color: #999;
+  color: rgba(255,255,255,0.65);
 }
 
 .subtitle a {
-  color: #6bf;
-  text-decoration: none;
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.4);
+  text-underline-offset: 2px;
 }
 
 .subtitle a:hover {
-  text-decoration: underline;
+  text-decoration-color: #fff;
 }
 
 h2 {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #fff;
-  background: #555;
-  padding: 4px 6px;
+  background: #e63;
+  padding: 6px 1.25em;
   margin-top: 1.5em;
   margin-bottom: 0;
 }
@@ -73,7 +93,7 @@ h2 {
   display: grid;
   grid-template-columns: 210px 1fr;
   gap: 0;
-  border-left: 3px solid #e0e0e0;
+  border-left: 3px solid #e63;
 }
 
 .entry {
@@ -82,12 +102,12 @@ h2 {
 
 .entry:nth-child(odd) .source,
 .entry:nth-child(odd) .title {
-  background: #f6f6f6;
+  background: #f7f7f6;
 }
 
 .source {
-  padding: 5px 10px 5px 8px;
-  font-size: 13px;
+  padding: 5px 10px 5px calc(1.25em - 3px);
+  font-size: 14px;
   font-weight: 600;
   color: #555;
   white-space: nowrap;
@@ -102,7 +122,7 @@ h2 {
 }
 
 .source a:hover {
-  color: #000;
+  color: #e63;
 }
 
 .title {
@@ -112,7 +132,7 @@ h2 {
 
 .title a {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #1a1a1a;
   text-decoration: none;
 }
@@ -122,15 +142,15 @@ h2 {
 }
 
 .title a:hover {
-  color: #06c;
+  color: #e63;
   text-decoration: underline;
 }
 
 footer {
   margin-top: 2.5em;
   padding-top: 1em;
-  border-top: 2px solid #222;
-  font-size: 13px;
+  border-top: 2px solid #e63;
+  font-size: 14px;
   color: #888;
 }
 
@@ -141,7 +161,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #000;
+  color: #e63;
   text-decoration: underline;
 }
 
@@ -153,7 +173,7 @@ footer a:hover {
   }
   .entries {
     display: block;
-    border-left: 2px solid #e0e0e0;
+    border-left: 3px solid #e63;
   }
   .entry {
     display: block;
@@ -161,7 +181,7 @@ footer a:hover {
     border-bottom: 1px solid #eee;
   }
   .entry:nth-child(odd) {
-    background: #f6f6f6;
+    background: #f7f7f6;
   }
   .entry:nth-child(odd) .source,
   .entry:nth-child(odd) .title {
@@ -169,11 +189,9 @@ footer a:hover {
   }
   .source {
     border-bottom: none;
-    padding: 0;
-    font-size: 12px;
-    color: #888;
+    padding: 0 0 2px 0;
   }
-  .source a { color: #888; }
+  .source a:hover { color: #e63; }
   .title {
     border-bottom: none;
     padding: 0;
@@ -186,7 +204,7 @@ footer a:hover {
 <div class="container">
 
 <header>
-  <h1>Engineering Blogs</h1>
+  <h1><span>Engineering Blogs</span></h1>
   <p class="subtitle">
     {{.EntryCount}} posts / {{.FeedCount}} feeds / 7 days
     &middot; <a href="engblogs.opml">OPML</a>
