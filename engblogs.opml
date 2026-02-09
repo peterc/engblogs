@@ -370,6 +370,8 @@
 <outline type="rss" text="Susam Pal" xmlUrl="https://susam.net/./feed.xml" htmlUrl="https://susam.net/"/>
 <outline type="rss" text="Heroku" xmlUrl="https://www.heroku.com/feed/" htmlUrl="https://www.heroku.com/blog/"/>
 <outline type="rss" text="Go Programming Language" xmlUrl="https://go.dev/blog/feed.atom" htmlUrl="https://go.dev/blog/"/>
+<outline type="rss" text="Tomasz Gągor" xmlUrl="https://gagor.pro/index.xml" htmlUrl="https://gagor.pro/about/"/>
+<outline type="rss" text="Apartment 304" xmlUrl="https://blog.apartment304.com/feed.xml" htmlUrl="https://blog.apartment304.com/"/>
 </outline>
 </body>
 </opml>
