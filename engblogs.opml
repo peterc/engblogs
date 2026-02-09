@@ -42,7 +42,6 @@
 <outline type="rss" text="Advanced Web" xmlUrl="https://advancedweb.hu/atom.xml" htmlUrl="https://advancedweb.hu/"/>
 <outline type="rss" text="Auth0" xmlUrl="https://auth0.com/blog/rss.xml" htmlUrl="https://auth0.com/blog/"/>
 <outline type="rss" text="AWS" xmlUrl="https://aws.amazon.com/blogs/aws/feed/" htmlUrl="https://aws.amazon.com/blogs/aws/"/>
-<outline type="rss" text="500px" xmlUrl="https://developers.500px.com/feed" htmlUrl="https://developers.500px.com/"/>
 <outline type="rss" text="Blender" xmlUrl="https://code.blender.org/rss" htmlUrl="https://code.blender.org/"/>
 <outline type="rss" text="CodeName One" xmlUrl="http://www.codenameone.com/feed.xml" htmlUrl="http://www.codenameone.com/blog.html"/>
 <outline type="rss" text="Atomic Object" xmlUrl="https://spin.atomicobject.com/feed/" htmlUrl="https://spin.atomicobject.com/"/>
@@ -68,7 +67,6 @@
 <outline type="rss" text="Databricks" xmlUrl="https://databricks.com/feed" htmlUrl="https://databricks.com/blog"/>
 <outline type="rss" text="Deezer" xmlUrl="https://deezer.io/feed" htmlUrl="https://deezer.io/"/>
 <outline type="rss" text="Expedia" xmlUrl="https://medium.com/feed/expedia-group-tech" htmlUrl="https://medium.com/expedia-group-tech"/>
-<outline type="rss" text="Facebook AI Research" xmlUrl="https://engineering.fb.com/feed/" htmlUrl="https://engineering.fb.com/category/ai-research/"/>
 <outline type="rss" text="Etsy" xmlUrl="https://codeascraft.com/feed/" htmlUrl="https://codeascraft.com/"/>
 <outline type="rss" text="Feedzai" xmlUrl="https://medium.com/feed/feedzaitech" htmlUrl="https://medium.com/feedzaitech"/>
 <outline type="rss" text="Findmypast" xmlUrl="https://tech.findmypast.com/feed.xml" htmlUrl="http://tech.findmypast.com/"/>
@@ -78,7 +76,6 @@
 <outline type="rss" text="Envoy" xmlUrl="https://envoy.engineering/feed" htmlUrl="https://envoy.engineering/"/>
 <outline type="rss" text="Flipboard" xmlUrl="http://engineering.flipboard.com/feed.xml" htmlUrl="http://engineering.flipboard.com/"/>
 <outline type="rss" text="Evernote" xmlUrl="https://evernote.com/blog/feed/" htmlUrl="https://evernote.com/blog/"/>
-<outline type="rss" text="Drivy" xmlUrl="https://drivy.engineering/feed.xml" htmlUrl="https://drivy.engineering/"/>
 <outline type="rss" text="Evil Martians" xmlUrl="https://evilmartians.com/chronicles.atom" htmlUrl="https://evilmartians.com/chronicles/"/>
 <outline type="rss" text="Ebay" xmlUrl="https://www.ebayinc.com/stories/blogs/tech/rss/" htmlUrl="https://www.ebayinc.com/stories/blogs/tech/"/>
 <outline type="rss" text="Google Online Security" xmlUrl="http://feeds.feedburner.com/GoogleOnlineSecurityBlog" htmlUrl="https://security.googleblog.com/"/>
@@ -91,12 +88,9 @@
 <outline type="rss" text="Google Research" xmlUrl="http://feeds.feedburner.com/blogspot/gJZg" htmlUrl="https://research.googleblog.com/"/>
 <outline type="rss" text="Grab" xmlUrl="http://engineering.grab.com/feed.xml" htmlUrl="http://engineering.grab.com/"/>
 <outline type="rss" text="Guardian" xmlUrl="https://www.theguardian.com/info/series/digital-blog/rss" htmlUrl="https://www.theguardian.com/info/developer-blog"/>
-<outline type="rss" text="Good Eggs" xmlUrl="https://team.goodeggs.com/feed" htmlUrl="https://team.goodeggs.com"/>
-<outline type="rss" text="Hostinger" xmlUrl="https://www.hostinger.com/blog/feed/" htmlUrl="https://www.hostinger.com/blog/engineering/"/>
 <outline type="rss" text="Doximity" xmlUrl="https://engineering.doximity.com/feed" htmlUrl="https://engineering.doximity.com"/>
 <outline type="rss" text="HubSpot" xmlUrl="https://product.hubspot.com/blog/rss.xml" htmlUrl="http://product.hubspot.com/blog/topic/engineering"/>
 <outline type="rss" text="HackerEarth" xmlUrl="http://engineering.hackerearth.com/rss" htmlUrl="http://engineering.hackerearth.com/"/>
-<outline type="rss" text="HomeAway" xmlUrl="https://medium.com/feed/homeaway-tech-blog" htmlUrl="https://tech.homeaway.com/"/>
 <outline type="rss" text="Housing.com" xmlUrl="https://medium.com/feed/engineering-housing" htmlUrl="https://medium.com/engineering-housing"/>
 <outline type="rss" text="Grofers" xmlUrl="https://lambda.grofers.com/feed" htmlUrl="https://lambda.grofers.com/"/>
 <outline type="rss" text="Dropbox" xmlUrl="https://dropbox.tech/feed" htmlUrl="https://blogs.dropbox.com/tech/"/>
@@ -149,7 +143,6 @@
 <outline type="rss" text="REA Group" xmlUrl="https://www.rea-group.com/category/tech/feed/" htmlUrl="https://www.rea-group.com/category/tech/"/>
 <outline type="rss" text="Prezi" xmlUrl="https://engineering.prezi.com/feed" htmlUrl="https://medium.com/prezi-engineering"/>
 <outline type="rss" text="Salesforce" xmlUrl="https://developer.salesforce.com/blogs/feed" htmlUrl="https://developer.salesforce.com/blogs/engineering/"/>
-<outline type="rss" text="Mesosphere" xmlUrl="https://mesosphere.com/feed/" htmlUrl="https://mesosphere.com/blog/"/>
 <outline type="rss" text="Thoughtbot" xmlUrl="https://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots" htmlUrl="https://robots.thoughtbot.com/"/>
 <outline type="rss" text="Target" xmlUrl="https://target.github.io/feed.xml" htmlUrl="https://target.github.io/"/>
 <outline type="rss" text="Squarespace" xmlUrl="https://engineering.squarespace.com/blog?format=RSS" htmlUrl="https://engineering.squarespace.com/"/>
@@ -174,7 +167,6 @@
 <outline type="rss" text="Upday" xmlUrl="https://upday.github.io/feed.xml" htmlUrl="https://upday.github.io/"/>
 <outline type="rss" text="Universe" xmlUrl="https://engineering.universe.com/feed" htmlUrl="https://engineering.universe.com"/>
 <outline type="rss" text="Vena Solutions" xmlUrl="https://engineering.vena.io/rss/" htmlUrl="https://engineering.vena.io/"/>
-<outline type="rss" text="SitePoint" xmlUrl="https://www.sitepoint.com/feed/" htmlUrl="https://sitepoint.com"/>
 <outline type="rss" text="UpGrad" xmlUrl="https://engineering.upgrad.com/feed" htmlUrl="https://engineering.upgrad.com"/>
 <outline type="rss" text="Stripe" xmlUrl="https://stripe.com/blog/feed.rss" htmlUrl="https://stripe.com/blog"/>
 <outline type="rss" text="Zumba" xmlUrl="http://feeds.feedburner.com/zumba_engineering" htmlUrl="http://tech.zumba.com/"/>
@@ -199,7 +191,6 @@
 <outline type="rss" text="Carlos Becker" xmlUrl="https://carlosbecker.com/index.xml" htmlUrl="https://carlosbecker.com"/>
 <outline type="rss" text="Brendan Eich" xmlUrl="https://brendaneich.com/feed/" htmlUrl="https://brendaneich.com/"/>
 <outline type="rss" text="Antirez" xmlUrl="http://antirez.com/rss" htmlUrl="http://antirez.com/latest/0"/>
-<outline type="rss" text="Daily Tech Video" xmlUrl="http://dailytechvideo.com/feed/" htmlUrl="http://dailytechvideo.com/"/>
 <outline type="rss" text="Abhinaba Basu" xmlUrl="https://blogs.msdn.microsoft.com/abhinaba/feed/" htmlUrl="https://blogs.msdn.com/b/abhinaba/"/>
 <outline type="rss" text="Bohops" xmlUrl="https://bohops.com/feed/" htmlUrl="https://bohops.com/"/>
 <outline type="rss" text="Armin Ronacher" xmlUrl="http://lucumr.pocoo.org/feed.atom" htmlUrl="http://lucumr.pocoo.org/"/>
