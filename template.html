@@ -225,11 +225,17 @@ footer a:hover {
 }
 
 @media (max-width: 700px) {
+  .container {
+    padding: 0 0 2em;
+  }
   footer {
     flex-direction: column;
     gap: 0.25em;
+    padding: 0.75em 0.5em 0;
   }
   header {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
     flex-direction: column;
     gap: 0.25em;
     align-items: flex-start;
@@ -257,11 +263,16 @@ footer a:hover {
     background: transparent;
   }
   .source {
+    display: block;
     border-bottom: none;
     padding: 0 0 2px 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
   .source a:hover { color: #e63; }
   .title {
+    display: block;
     border-bottom: none;
     padding: 0;
   }
