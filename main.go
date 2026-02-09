@@ -202,9 +202,9 @@ func parseOPML(path string) ([]Feed, error) {
 	extract = func(outlines []OPMLOutline) {
 		for _, o := range outlines {
 			if o.XMLURL != "" {
-				title := o.Title
+				title := o.Text
 				if title == "" {
-					title = o.Text
+					title = o.Title
 				}
 				feeds = append(feeds, Feed{
 					Title:   title,
