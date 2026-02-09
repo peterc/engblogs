@@ -208,6 +208,9 @@ footer {
   border-top: 2px solid #e63;
   font-size: 14px;
   color: #888;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 footer a {
@@ -222,6 +225,10 @@ footer a:hover {
 }
 
 @media (max-width: 700px) {
+  footer {
+    flex-direction: column;
+    gap: 0.25em;
+  }
   header {
     flex-direction: column;
     gap: 0.25em;
@@ -292,7 +299,8 @@ footer a:hover {
 {{end}}
 
 <footer>
-  <a href="https://github.com/peterc/engblogs/issues">Suggest a feed</a> by opening an issue or PR on <a href="https://github.com/peterc/engblogs">GitHub</a>.
+  <span><a href="https://github.com/peterc/engblogs/issues">Suggest a feed</a> by opening an issue or PR on <a href="https://github.com/peterc/engblogs">GitHub</a>.</span>
+  <span>A <a href="https://cooperpress.com/">Cooperpress</a> project</span>
 </footer>
 
 </div>
