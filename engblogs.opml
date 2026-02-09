@@ -366,11 +366,18 @@
 <outline type="rss" text="Kotlin" xmlUrl="https://blog.jetbrains.com/kotlin/feed/" htmlUrl="https://blog.jetbrains.com/kotlin/"/>
 <outline type="rss" text="Tania Rascia" xmlUrl="https://tania.dev/rss.xml" htmlUrl="https://tania.dev/"/>
 <outline type="rss" text="Swizec Teller" xmlUrl="https://swizec.com/rss.xml" htmlUrl="https://swizec.com/blog/"/>
-<outline type="rss" text="Eclectic Light Company" xmlUrl="https://eclecticlight.co/feed/" htmlUrl="https://eclecticlight.co/2026/02/08/last-week-on-my-mac-why-e-cores-make-apple-silicon-fast/"/>
 <outline type="rss" text="eieio.games" xmlUrl="https://eieio.games/feed.xml" htmlUrl="https://eieio.games/blog/"/>
 <outline type="rss" text="Netflix TechBlog" xmlUrl="https://netflixtechblog.com/feed" htmlUrl="https://netflixtechblog.com/"/>
 <outline type="rss" text="Tailscale" xmlUrl="https://tailscale.com/blog/index.xml" htmlUrl="https://tailscale.com/blog"/>
 <outline type="rss" text="Fly.io" xmlUrl="https://fly.io/blog/feed.xml" htmlUrl="https://fly.io/blog/"/>
+<outline type="rss" text="Jeffrey Zeldman" xmlUrl="https://zeldman.com/feed/" htmlUrl="https://zeldman.com/"/>
+<outline type="rss" text="Slashdot" xmlUrl="https://rss.slashdot.org/Slashdot/slashdotMain" htmlUrl="https://slashdot.org/"/>
+<outline type="rss" text="APNIC" xmlUrl="https://blog.apnic.net/feed/" htmlUrl="https://blog.apnic.net/"/>
+<outline type="rss" text="Chris Siebenmann" xmlUrl="https://utcc.utoronto.ca/~cks/space/blog/?atom" htmlUrl="https://utcc.utoronto.ca/~cks/space/blog/"/>
+<outline type="rss" text="Daniel Lemire" xmlUrl="https://lemire.me/blog/feed/" htmlUrl="https://lemire.me/blog/"/>
+<outline type="rss" text="Simon Willison" xmlUrl="https://simonwillison.net/atom/entries/" htmlUrl="http://simonwillison.net/"/>
+<outline type="rss" text="Susam Pal" xmlUrl="https://susam.net/./feed.xml" htmlUrl="https://susam.net/"/>
+<outline type="rss" text="Heroku" xmlUrl="https://www.heroku.com/feed/" htmlUrl="https://www.heroku.com/blog/"/>
 </outline>
 </body>
 </opml>
