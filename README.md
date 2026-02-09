@@ -1,8 +1,13 @@
-# Engineering Blogs
+# Engineering Blogs Aggregator
+
+![Engineering Blogs screenshot](screenshot.png)
 
 [engineeringblogs.xyz](https://engineeringblogs.xyz/) aggregates posts from hundreds of engineering blogs into a single page, covering the past seven days. It's rebuilt every few hours automatically.
 
-No accounts, no algorithms, no JavaScript -- just a list of links.
+No accounts, no algorithms -- just a list of links with a quick filter to search through them.
+
+> [!TIP]
+> You can also just take the OPML file and use it in your own feed reader!
 
 ## Suggest a feed
 

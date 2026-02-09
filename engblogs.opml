@@ -27,7 +27,6 @@
 <outline type="rss" text="RBI Tech" xmlUrl="https://medium.com/feed/rbi-tech" htmlUrl="https://medium.com/rbi-tech" />
 <outline type="rss" text="SeveralNines" xmlUrl="https://severalnines.com/rss.xml" htmlUrl="https://severalnines.com/database-blog" />
 <outline type="rss" text="Learnk8s" xmlUrl="https://learnk8s.io/rss.xml" htmlUrl="https://learnk8s.io/blog" />
-<outline type="rss" text="GumGum" xmlUrl="https://medium.com/feed/gumgum-tech" htmlUrl="https://medium.com/gumgum-tech"/>
 <outline type="rss" text="V8 Team" xmlUrl="https://v8.dev/blog.atom" htmlUrl="https://v8.dev/"/>
 <outline type="rss" text="Ruby-lang" xmlUrl="https://www.ruby-lang.org/en/feeds/news.rss" htmlUrl="https://www.ruby-lang.org/en/news/"/>
 <outline type="rss" text="Node.js" xmlUrl="https://nodejs.org/en/feed/blog.xml" htmlUrl="https://nodejs.org/en/blog/"/>
