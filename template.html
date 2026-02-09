@@ -44,7 +44,63 @@ header {
   max-width: 1060px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
 }
+
+#filter-wrap {
+  position: relative;
+  align-self: center;
+  width: 280px;
+}
+
+#filter {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 5px 28px 5px 10px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 3px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  outline: none;
+  width: 100%;
+}
+
+#filter::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+#filter:focus {
+  background: rgba(255,255,255,0.25);
+  border-color: rgba(255,255,255,0.7);
+}
+
+#filter-clear {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 4px;
+  display: none;
+  line-height: 1;
+}
+
+#filter-clear:hover {
+  color: #fff;
+}
+
+.hidden { display: none !important; }
+.entry.hidden { display: contents; }
+.entry.hidden .source,
+.entry.hidden .title { display: none; }
 
 h1 {
   font-size: 28px;
@@ -171,6 +227,12 @@ footer a:hover {
     gap: 0.25em;
     align-items: flex-start;
   }
+  #filter-wrap {
+    display: none;
+  }
+  .entry.hidden {
+    display: none;
+  }
   .entries {
     display: block;
     border-left: 3px solid #e63;
@@ -204,11 +266,17 @@ footer a:hover {
 <div class="container">
 
 <header>
-  <h1><span>Engineering Blogs</span></h1>
-  <p class="subtitle">
-    {{.EntryCount}} posts / {{.FeedCount}} feeds / 7 days
-    &middot; <a href="engblogs.opml">OPML</a>
-  </p>
+  <div>
+    <h1><span>Engineering Blogs</span></h1>
+    <p class="subtitle">
+      {{.EntryCount}} posts / {{.FeedCount}} feeds / 7 days
+      &middot; <a href="engblogs.opml">OPML</a>
+    </p>
+  </div>
+  <div id="filter-wrap">
+    <input type="text" id="filter" placeholder="Filter posts..." autocomplete="off" spellcheck="false">
+    <button type="button" id="filter-clear" aria-label="Clear filter">&times;</button>
+  </div>
 </header>
 
 {{range .Groups}}
@@ -229,5 +297,35 @@ footer a:hover {
 
 </div>
 
+<script>
+(function() {
+  var timer, input = document.getElementById('filter'),
+      btn = document.getElementById('filter-clear');
+  input.addEventListener('input', function() {
+    clearTimeout(timer);
+    timer = setTimeout(filter, 200);
+  });
+  btn.addEventListener('click', function() {
+    input.value = '';
+    filter();
+    input.focus();
+  });
+  function filter() {
+    var q = input.value.toLowerCase();
+    btn.style.display = q ? 'block' : 'none';
+    document.querySelectorAll('.entry').forEach(function(entry) {
+      var text = entry.textContent.toLowerCase();
+      entry.classList.toggle('hidden', q && text.indexOf(q) === -1);
+    });
+    document.querySelectorAll('h2').forEach(function(h2) {
+      var entries = h2.nextElementSibling;
+      if (!entries) return;
+      var allHidden = !entries.querySelector('.entry:not(.hidden)');
+      h2.classList.toggle('hidden', q && allHidden);
+      entries.classList.toggle('hidden', q && allHidden);
+    });
+  }
+})();
+</script>
 </body>
 </html>
