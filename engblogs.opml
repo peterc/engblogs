@@ -3,6 +3,7 @@
 <head><title>Engineering Blogs</title></head>
 <body>
 <outline text="Engineering Blogs">
+<outline type="rss" text="wingolog" htmlUrl="https://wingolog.org/" xmlUrl="https://wingolog.org/feed/atom"/>
 <outline type="rss" text="Romes' Musings" htmlUrl="https://alt-romes.github.io" xmlUrl="https://alt-romes.github.io/atom.xml" />
 <outline type="rss" text="Gunnar Morling" htmlUrl="https://www.morling.dev/blog/" xmlUrl="https://www.morling.dev/blog/index.xml" />
 <outline type="rss" text="Tinybird" htmlUrl="https://tinybird.com/blog" xmlUrl="https://www.tinybird.co/blog/rss.xml" />
