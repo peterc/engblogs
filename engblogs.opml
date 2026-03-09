@@ -50,7 +50,6 @@
 <outline type="rss" text="Bandcamp" xmlUrl="https://bandcamptech.wordpress.com/feed/" htmlUrl="https://bandcamptech.wordpress.com/"/>
 <outline type="rss" text="BenefitFocus" xmlUrl="https://www.benefitfocus.com/rss.xml" htmlUrl="https://www.benefitfocus.com/blogs/design-engineering"/>
 <outline type="rss" text="Bazaarvoice" xmlUrl="https://blog.developer.bazaarvoice.com/feed/" htmlUrl="https://blog.developer.bazaarvoice.com/"/>
-<outline type="rss" text="Codemancers" xmlUrl="https://crypt.codemancers.com/index.xml" htmlUrl="https://crypt.codemancers.com/"/>
 <outline type="rss" text="Cloudflare" xmlUrl="https://blog.cloudflare.com/rss/" htmlUrl="https://blog.cloudflare.com/"/>
 <outline type="rss" text="Bitly" xmlUrl="https://word.bitly.com/rss" htmlUrl="http://word.bitly.com/"/>
 <outline type="rss" text="Confluent" xmlUrl="https://www.confluent.io/feed/" htmlUrl="https://www.confluent.io/blog"/>
@@ -97,7 +96,6 @@
 <outline type="rss" text="Helpshift" xmlUrl="https://medium.com/feed/helpshift-engineering" htmlUrl="https://medium.com/helpshift-engineering/"/>
 <outline type="rss" text="Hashnode" xmlUrl="https://engineering.hashnode.com/rss.xml" htmlUrl="https://engineering.hashnode.com/"/>
 <outline type="rss" text="Honeybadger" xmlUrl="http://blog.honeybadger.io/feed.xml" htmlUrl="http://blog.honeybadger.io/"/>
-<outline type="rss" text="IBM developerWorks" xmlUrl="https://developer.ibm.com/dwblog/feed/" htmlUrl="https://developer.ibm.com/dwblog/"/>
 <outline type="rss" text="Indeed" xmlUrl="http://engineering.indeedblog.com/feed/" htmlUrl="http://engineering.indeedblog.com/blog/"/>
 <outline type="rss" text="Instagram" xmlUrl="https://instagram-engineering.com/feed" htmlUrl="https://engineering.instagram.com/"/>
 <outline type="rss" text="Jolly Good Code" xmlUrl="https://jollygoodcode.github.io/atom.xml" htmlUrl="https://jollygoodcode.github.io/"/>
