@@ -36,7 +36,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: cache.json
-          key: feed-cache
+          key: feed-cache-${{ github.run_id }}
+          restore-keys: feed-cache-
 
       - name: Build site
         run: go run main.go
