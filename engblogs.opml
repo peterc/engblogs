@@ -368,6 +368,7 @@
 <outline type="rss" text="Go Programming Language" xmlUrl="https://go.dev/blog/feed.atom" htmlUrl="https://go.dev/blog/"/>
 <outline type="rss" text="Tomasz Gągor" xmlUrl="https://gagor.pro/index.xml" htmlUrl="https://gagor.pro/about/"/>
 <outline type="rss" text="Apartment 304" xmlUrl="https://blog.apartment304.com/feed.xml" htmlUrl="https://blog.apartment304.com/"/>
+<outline type="rss" text="JVM Weekly" xmlUrl="https://jvm-weekly.substack.com/feed" htmlUrl="https://www.jvm-weekly.com/"/>
 </outline>
 </body>
 </opml>
