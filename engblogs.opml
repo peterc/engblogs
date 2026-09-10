@@ -113,7 +113,7 @@
 <outline type="rss" text="Kickstarter" xmlUrl="https://kickstarter.engineering/feed" htmlUrl="https://www.kickstarter.com/backing-and-hacking"/>
 <outline type="rss" text="Myntra" xmlUrl="https://medium.com/feed/myntra-engineering" htmlUrl="https://medium.com/myntra-engineering"/>
 <outline type="rss" text="Okta" xmlUrl="https://developer.okta.com/feed.xml" htmlUrl="https://developer.okta.com/blog/"/>
-<outline type="rss" text="Jane Street" xmlUrl="https://blogs.janestreet.com/feed.xml" htmlUrl="https://blogs.janestreet.com/category/ocaml/"/>
+<outline type="rss" text="Jane Street" xmlUrl="https://blog.janestreet.com/feed.xml" htmlUrl="https://blog.janestreet.com/"/>
 <outline type="rss" text="Lyft" xmlUrl="https://eng.lyft.com/feed" htmlUrl="https://eng.lyft.com/"/>
 <outline type="rss" text="Latacora" xmlUrl="https://latacora.micro.blog/feed.xml" htmlUrl="https://latacora.singles/"/>
 <outline type="rss" text="Mozilla Automation" xmlUrl="http://planet.mozilla.org/ateam/atom.xml" htmlUrl="https://planet.mozilla.org/ateam/"/>
